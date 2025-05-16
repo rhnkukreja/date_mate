@@ -1,0 +1,109 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 10% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 4%;
+
+    --primary: 346 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 324 100% 70%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 346 100% 95%;
+    --accent-foreground: 346 100% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
+    --ring: 346 100% 60%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 220 10% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 10% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 10% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 346 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 324 100% 70%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 10% 15%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 346 100% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 346 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-opensans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
+  }
+}
+
+/* Custom Utility Classes */
+@layer components {
+  .datemate-container {
+    @apply w-full max-w-md mx-auto px-4 sm:px-6;
+  }
+  
+  .datemate-gradient {
+    @apply bg-gradient-to-r from-datemate-red to-datemate-pink;
+  }
+  
+  .datemate-card {
+    @apply bg-white dark:bg-datemate-black rounded-2xl shadow-lg p-6;
+  }
+  
+  .datemate-input {
+    @apply rounded-lg border border-gray-300 dark:border-gray-700 px-4 py-3 w-full focus:ring-2 focus:ring-datemate-pink focus:border-transparent;
+  }
+  
+  .datemate-button-primary {
+    @apply datemate-gradient text-white font-semibold rounded-full py-3 px-8 hover:opacity-90 transition-opacity shadow-md;
+  }
+  
+  .datemate-button-secondary {
+    @apply bg-white text-datemate-red border border-datemate-red font-semibold rounded-full py-3 px-8 hover:bg-gray-50 transition-colors;
+  }
+}
